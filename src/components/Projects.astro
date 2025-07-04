@@ -3,13 +3,44 @@ import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
+import ReactIcon from "./icons/React.astro"
+import ChakraIcon from "./icons/Chakra.astro"
+import SocketIOIcon from "./icons/SocketIO.astro"
+import NodeIcon from "./icons/Node.astro"
+import ExpressIcon from "./icons/Express.astro"
+import PostgreSQLIcon from "./icons/PostgreSQL.astro"
+import Osp from "./icons/OSP_Login.png"
 
 const TAGS = {
-  NEXT: {
-    name: "Next.js",
+  REACT: {
+    name: "React",
+    class: "bg-[#20232a] text-cyan-300",
+    icon: ReactIcon,
+  },
+  CHAKRA: {
+    name: "Chakra UI",
+    class: "bg-[#319795] text-white",
+    icon: ChakraIcon,
+  },
+  SOCKETIO: {
+    name: "Socket.IO",
     class: "bg-black text-white",
-    icon: NextJS,
+    icon: SocketIOIcon,
+  },
+  NODE: {
+    name: "Node.js",
+    class: "bg-[#026e00] text-white",
+    icon: NodeIcon,
+  },
+  EXPRESS: {
+    name: "Express",
+    class: "bg-gray-800 text-white",
+    icon: ExpressIcon,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-[#336791] text-white",
+    icon: PostgreSQLIcon,
   },
   TAILWIND: {
     name: "Tailwind CSS",
@@ -17,25 +48,29 @@ const TAGS = {
     icon: Tailwind,
   },
 }
+
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
+    title: "Chat App",
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Designed and built a real-time chat application with custom REST APIs for efficient communication. Developed using React and Chakra UI with real-time capabilities powered by Socket.IO and PostgreSQL for backend data management.",
+    link: "", // Add your live project URL here
+    github: "", // Add your GitHub repo URL here
+    image: "", // Optional image path (e.g., "/projects/chatapp.webp")
+    tags: [TAGS.REACT, TAGS.CHAKRA, TAGS.SOCKETIO, TAGS.POSTGRESQL],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "Online Scholarship Portal",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "A web-based platform to streamline the scholarship application and management process. Includes student registration, application tracking, admin dashboard, secure OTP login, and real-time status updates.",
+    link: "", // Add your live project URL here
+    github: "", // Add your GitHub repo URL here
+    image: Osp, // Optional image path (e.g., "/projects/scholarship.webp")
+    tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.TAILWIND, TAGS.POSTGRESQL],
   },
 ]
+
+
 ---
 
 <div class="flex flex-col gap-y-16">
