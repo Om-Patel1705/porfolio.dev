@@ -3,6 +3,7 @@ import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
+import LinkButton from "./LinkButton.astro"
 import ReactIcon from "./icons/React.astro"
 import ChakraIcon from "./icons/Chakra.astro"
 import SocketIOIcon from "./icons/SocketIO.astro"
@@ -10,6 +11,7 @@ import NodeIcon from "./icons/Node.astro"
 import ExpressIcon from "./icons/Express.astro"
 import PostgreSQLIcon from "./icons/PostgreSQL.astro"
 import Osp from "./icons/OSP_Login.png"
+import Chat from "./icons/Chat_App.jpg"
 
 const TAGS = {
   REACT: {
@@ -54,23 +56,21 @@ const PROJECTS = [
     title: "Chat App",
     description:
       "Designed and built a real-time chat application with custom REST APIs for efficient communication. Developed using React and Chakra UI with real-time capabilities powered by Socket.IO and PostgreSQL for backend data management.",
-    link: "", // Add your live project URL here
-    github: "", // Add your GitHub repo URL here
-    image: "", // Optional image path (e.g., "/projects/chatapp.webp")
+    link: "https://chat-app-psi-roan.vercel.app/chats", // Add your live project URL here
+    github: "https://github.com/Om-Patel1705/Chat-App", // Add your GitHub repo URL here
+    image: Chat.src,
     tags: [TAGS.REACT, TAGS.CHAKRA, TAGS.SOCKETIO, TAGS.POSTGRESQL],
   },
   {
     title: "Online Scholarship Portal",
     description:
       "A web-based platform to streamline the scholarship application and management process. Includes student registration, application tracking, admin dashboard, secure OTP login, and real-time status updates.",
-    link: "", // Add your live project URL here
-    github: "", // Add your GitHub repo URL here
-    image: Osp, // Optional image path (e.g., "/projects/scholarship.webp")
+    link: "https://group7-osp.vercel.app/", // Add your live project URL here
+    github: "https://github.com/202201138/Group7_OSP_Forked", // Add your GitHub repo URL here
+    image: Osp.src,
     tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.TAILWIND, TAGS.POSTGRESQL],
   },
 ]
-
-
 ---
 
 <div class="flex flex-col gap-y-16">
@@ -79,7 +79,7 @@ const PROJECTS = [
     <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
   <div class="w-full md:w-1/2">
     <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
+      <img alt={title} class="object-contain object-center w-full h-56 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-100" loading="lazy" src={image} />
     </div>
   </div>
 
@@ -107,7 +107,6 @@ const PROJECTS = [
             <LinkButton href={github}>
               <GitHub class="size-6" />
               Code
-              
             </LinkButton>
           )}
           {link && (
@@ -123,6 +122,3 @@ const PROJECTS = [
     ))
   }
 </div>
-
-
-
