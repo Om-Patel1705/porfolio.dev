@@ -12,6 +12,9 @@ import ExpressIcon from "./icons/Express.astro"
 import PostgreSQLIcon from "./icons/PostgreSQL.astro"
 import Osp from "./icons/OSP_Login.png"
 import Chat from "./icons/Chat_App.jpg"
+import AgentlessImg from "./agentless.png"
+import Train from "./Train.png"
+import ThinkSpecImg from "./ThinkSpecImg.jpeg"
 
 const TAGS = {
   REACT: {
@@ -56,8 +59,8 @@ const PROJECTS = [
     title: "Chat App",
     description:
       "Designed and built a real-time chat application with custom REST APIs for efficient communication. Developed using React and Chakra UI with real-time capabilities powered by Socket.IO and PostgreSQL for backend data management.",
-    link: "https://chat-app-psi-roan.vercel.app/chats", // Add your live project URL here
-    github: "https://github.com/Om-Patel1705/Chat-App", // Add your GitHub repo URL here
+    link: "https://chat-app-psi-roan.vercel.app/chats",
+    github: "https://github.com/Om-Patel1705/Chat-App",
     image: Chat.src,
     tags: [TAGS.REACT, TAGS.CHAKRA, TAGS.SOCKETIO, TAGS.POSTGRESQL],
   },
@@ -65,10 +68,37 @@ const PROJECTS = [
     title: "Online Scholarship Portal",
     description:
       "A web-based platform to streamline the scholarship application and management process. Includes student registration, application tracking, admin dashboard, secure OTP login, and real-time status updates.",
-    link: "https://group7-osp.vercel.app/", // Add your live project URL here
-    github: "https://github.com/202201138/Group7_OSP_Forked", // Add your GitHub repo URL here
+    link: "https://group7-osp.vercel.app/",
+    github: "https://github.com/202201138/Group7_OSP_Forked",
     image: Osp.src,
     tags: [TAGS.NODE, TAGS.EXPRESS, TAGS.TAILWIND, TAGS.POSTGRESQL],
+  },
+  {
+    title: "Train Booking Website",
+    description:
+      "Developed an IRCTC-inspired train ticket booking system featuring user login, secure ticket booking and cancellation, with real-time database operations. Implemented PostgreSQL for data reliability and Express.js for smooth backend handling. Guided by Microsoft Student Technical Club.",
+    link: "http://wo-c6-0-react-irctc-clone-om-patel.vercel.app/",
+    github: "https://github.com/Om-Patel1705/WoC6.0-react-IRCTC-clone-OmPatel",
+    image: Train.src,
+    tags: [TAGS.REACT, TAGS.NODE, TAGS.EXPRESS, TAGS.POSTGRESQL],
+  },
+  {
+    title: "Agentless – Automated Bug Fixing Tool",
+    description:
+      "Researched and tested the Agentless v1.5.0 tool for automatic bug fixing using the SWE-benchlite dataset. It performs reproduction and regression testing on real-world GitHub issues, generating patches without human intervention. The project showcases the potential of ML-based automation in software debugging.",
+    link: "",
+    github: "https://github.com/Om-Patel1705/Agentless_Forked",
+    image: AgentlessImg.src,
+    tags: [],
+  },
+  {
+    title: "ThinkSpec – GenAI for Requirements Engineering",
+    description:
+      "Developed a local GenAI-based pipeline using Ollama and LangChain to generate and iteratively refine software requirements. Applied SOLID principles for user story structuring and prioritized them using the MoSCoW technique. Evaluated output quality with the RUST framework focusing on readability, uniqueness, specificity, and technical precision.",
+    link: "",
+    github: "https://github.com/Om-Patel1705/ThinkSpec",
+    image: ThinkSpecImg.src,
+    tags: [],
   },
 ]
 ---
@@ -76,49 +106,53 @@ const PROJECTS = [
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt={title} class="object-contain object-center w-full h-56 transition duration-500 sm:h-full md:scale-100 md:group-hover:scale-100" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt={title}
+              class="object-cover object-top w-full h-[240px] transition duration-500 group-hover:scale-[1.01] rounded-t-md"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2 flex-wrap">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>

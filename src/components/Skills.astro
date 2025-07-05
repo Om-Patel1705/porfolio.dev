@@ -1,0 +1,58 @@
+---
+import Cpp from "./icons/Cpp.astro"
+import Python from "./icons/Python.astro"
+import JavaScript from "./icons/JavaScript.astro"
+// import SQL from "./icons/SQL.astro"
+import ReactIcon from "./icons/React.astro"
+import NodeIcon from "./icons/Node.astro"
+import ExpressIcon from "./icons/Express.astro"
+import ChakraIcon from "./icons/Chakra.astro"
+import LangChainIcon from "./icons/LangChain.astro"
+import RestAPI from "./icons/RestAPI.astro"
+// import GitIcon from "./icons/Git.astro"
+import GitHubIcon from "./icons/GitHub.astro"
+import PostgreSQLIcon from "./icons/PostgreSQL.astro"
+import MongoDBIcon from "./icons/MongoDB.astro"
+// import VercelIcon from "./icons/Vercel.astro"
+import MLIcon from "./icons/ML.astro"
+// import JMeterIcon from "./icons/JMeter.astro"
+// import SeleniumIcon from "./icons/Selenium.astro"
+// import TeamworkIcon from "./icons/Teamwork.astro"
+// import ProblemSolvingIcon from "./icons/ProblemSolving.astro"
+
+const SKILLS = [
+  { name: "C++", icon: Cpp },
+  { name: "Python", icon: Python },
+  { name: "JavaScript", icon: JavaScript },
+//   { name: "SQL", icon: SQL },
+  { name: "React.js", icon: ReactIcon },
+  { name: "Node.js", icon: NodeIcon },
+  { name: "Express.js", icon: ExpressIcon },
+  { name: "Chakra UI", icon: ChakraIcon },
+  { name: "LangChain", icon: LangChainIcon },
+  { name: "REST API", icon: RestAPI },
+//   { name: "Git", icon: GitIcon },
+  { name: "GitHub", icon: GitHubIcon },
+  { name: "PostgreSQL", icon: PostgreSQLIcon },
+  { name: "MongoDB", icon: MongoDBIcon },
+//   { name: "Vercel", icon: VercelIcon },
+  { name: "Machine Learning", icon: MLIcon },
+//   { name: "Apache JMeter", icon: JMeterIcon },
+//   { name: "Selenium IDE", icon: SeleniumIcon },
+//   { name: "Team Collaboration", icon: TeamworkIcon },
+//   { name: "Problem Solving", icon: ProblemSolvingIcon },
+]
+---
+
+<section class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-10">
+  {SKILLS.map((skill) => (
+    <div class="group relative rounded-2xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-md hover:shadow-xl transition-transform transform hover:-translate-y-2 hover:scale-[1.02] p-4 flex flex-col items-center justify-center gap-3 text-center">
+      <div class="w-10 h-10 flex items-center justify-center">
+        <skill.icon class="w-8 h-8" />
+      </div>
+      <span class="text-sm font-semibold text-gray-800 dark:text-gray-100">
+        {skill.name}
+      </span>
+    </div>
+  ))}
+</section>
